@@ -6,10 +6,10 @@
 
 `yarn dev`
 
-visit `http://localhost:3000`:
+visit `http://localhost:3000`
 
 ## Production
 
-`yarn build`
-
-`yarn preview`
+`cp .env.example .env`
+change parameters in `.env` to sensible values.
+`sudo bash setup.sh`

@@ -1,0 +1,35 @@
+version: "3.4"
+
+services:
+
+  source:
+    container_name: source
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: unless-stopped
+    ports:
+      - "${PROXY_IP}:${PORT}:${PORT}"
+    env_file:
+      - .env
+
+  reverse-proxy:
+    container_name: reverse-proxy
+    image: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "${SSL_PORT}:${SSL_PORT}"
+    env_file:
+      - .env
+    volumes:
+      - ./data/nginx/templates:/etc/nginx/templates
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+
+  certbot:
+    container_name: cert
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot

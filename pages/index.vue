@@ -1,5 +1,5 @@
 <script setup>
-const projects = ref([
+const projects = useState("projects", () => [
   { projectURL: "/", projectDesc: "this website", gitHubURL: "https://github.com/ap-19927/index/", altText: "source code of this website on Github", },
   { projectURL: "https://post.roadpeoples.com/", projectDesc: "public thread", gitHubURL: "https://github.com/ap-19927/post/", altText: "source code of post on Github", },
   { projectURL: "", projectDesc: "minimal host and virtualization setup for gpu passthrough", gitHubURL: "https://github.com/ap-19927/gpu_passthrough/", altText: "source code of virtualization on Github", },
@@ -12,14 +12,14 @@ const projects = ref([
 </script>
 <template>
 <div>
-  <h1>projects</h1>
-  <ul>
-    <li v-for="(project, index) in projects">
+  <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">projects</h1>
+  <ul class="menu bg-base-400 w-56 rounded-box">
+    <li v-for="(project, index) in projects" class="w-fit">
       <NuxtLink :to=project.projectURL> {{project.projectDesc }} </NuxtLink>
       <GitHubLink :url=project.gitHubURL :alt=project.altText />
     </li>
     <li>
-      <a href="/notes">math notes</a>
+      <NuxtLink to="/notes">math notes</NuxtLink>
     </li>
   </ul>
 </div>

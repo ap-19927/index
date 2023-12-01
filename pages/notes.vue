@@ -1,15 +1,20 @@
+<script setup>
+const notes = useState("notes", () => [
+  { noteURL: "/docs/curves_series.pdf", noteDesc: "Curves and series notes" },
+  { noteURL: "/docs/pde.pdf", noteDesc: "PDE notes" },
+  { noteURL: "/docs/college_alg_notes.pdf", noteDesc: "College algebra notes" },
+  { noteURL: "/docs/sol'n_college_alg_notes.pdf",
+    noteDesc: "Some partial solutions to exercises found in College algebra notes"
+  },
+  { noteURL: "/docs/notes.pdf", noteDesc: "Multivariable calculus notes" },
+  { noteURL: "/docs/Allmann_Lin_Zhu.pdf", noteDesc: "Modified mean curvature flow of entire locally Lipschitz radial graphs in hyperbolic space" },
+]);
+</script>
 <template>
-<h1> notes </h1>
-<ul>
-  <li><a href="/docs/curves_series.pdf" download>Curves and series notes</a></li>
-  <li><a href="/docs/pde.pdf" download>PDE notes</a></li>
-  <li>
-    <a href="/docs/college_alg_notes.pdf" download>College algebra notes</a>
-    <ul>
-      <li> <a href="/docs/sol'n_college_alg_notes.pdf" download>Some partial solutions to exercises found in College algebra notes</a></li>
-    </ul>
+<h1 class="hidden"> notes </h1>
+<ul class="menu bg-base-400 w-fit rounded-box">
+  <li v-for="(note, index) in notes" class="w-fit">
+    <a :href=note.noteURL download> {{note.noteDesc}} </a>
   </li>
-  <li><a href="/docs/notes.pdf" download>Multivariable calculus notes</a></li>
-  <li><a href="/docs/Allmann_Lin_Zhu.pdf" download>Modified mean curvature flow of entire locally Lipschitz radial graphs in hyperbolic space</a></li>
 </ul>
 </template>

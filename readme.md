@@ -10,6 +10,4 @@ visit `http://localhost:3000`
 
 ## Production
 
-`cp .env.example .env`
-change parameters in `.env` to sensible values.
-`sudo bash setup.sh`
+https://stackoverflow.com/a/75879638

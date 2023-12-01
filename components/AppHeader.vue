@@ -1,7 +1,6 @@
 <script setup>
 const colorMode = useColorMode();
 const themes = [
-  'system',
   'emerald',
   'black',
 ];

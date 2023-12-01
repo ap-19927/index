@@ -1,12 +1,12 @@
 <template>
 <main>
   <h1 class="hidden">contact</h1>
-  <ul class="menu bg-base-400 w-56 rounded-box">
+  <ul class="menu bg-base-400 w-fit rounded-box">
     <li>
       <LinkedInLink />
     </li>
     <li>
-       <NuxtLink to="https://github.com/ap-19927/"> GitHub profile </NuxtLink>
+      <GitHubLink url="https://github.com/ap-19927/" alt="GitHub profile" />
     </li>
     <li>
       <a href="/docs/Patrick-Allmann.pdf" download>

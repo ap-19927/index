@@ -13,13 +13,21 @@ const projects = useState("projects", () => [
 <template>
 <div>
   <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">projects</h1>
-  <ul class="menu bg-base-400 w-56 rounded-box">
-    <li v-for="(project, index) in projects" class="w-fit">
-      <NuxtLink :to=project.projectURL> {{project.projectDesc }} </NuxtLink>
-      <GitHubLink :url=project.gitHubURL :alt=project.altText />
+  <ul class="menu bg-base-400 rounded-box">
+    <li v-for="(project, index) in projects">
+      <div class="w-fit">
+        <NuxtLink :to=project.projectURL> {{project.projectDesc }} </NuxtLink>
+      </div>
+      <ul class="menu bg-base-400 rounded-box">
+        <li>
+          <GitHubLink :url=project.gitHubURL :alt=project.altText />
+        </li>
+      </ul>
     </li>
     <li>
-      <NuxtLink to="/notes">math notes</NuxtLink>
+      <div class="w-fit">
+        <NuxtLink to="/notes">math notes</NuxtLink>
+      </div>
     </li>
   </ul>
 </div>

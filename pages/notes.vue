@@ -12,7 +12,7 @@ const notes = useState("notes", () => [
 </script>
 <template>
 <h1 class="hidden"> notes </h1>
-<ul class="menu bg-base-400 w-fit rounded-box">
+<ul class="menu bg-base-400 rounded-box">
   <li v-for="(note, index) in notes" class="w-fit">
     <a :href=note.noteURL download> {{note.noteDesc}} </a>
   </li>

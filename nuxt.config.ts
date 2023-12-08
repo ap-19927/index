@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
   colorMode: {
-    preference: 'system',
+    preference: 'emerald',
     dataValue: 'theme', // activate data-theme in <html> tag
     classSuffix: '',
   },

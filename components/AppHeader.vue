@@ -14,8 +14,8 @@ const themes = [
       <nav>
         <div class="navbar bg-base-100">
           <div class="flex-1">
-            <a class="btn btn-ghost text-xl" href="/">index</a>
-            <a class="btn btn-ghost text-xl" href="/contact">contact</a>
+            <a class="btn bg-transparent border-transparent hover:btn-primary text-xl" href="/">index</a>
+            <a class="btn bg-transparent border-transparent hover:btn-primary text-xl" href="/contact">contact</a>
           </div>
           <div class="flex-none gap-2">
             <select class="select w-full max-w-xs" v-model="colorMode.preference">
